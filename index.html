@@ -384,33 +384,51 @@
 }
 
 /* بهبود نمایش روی موبایل */
-@media (max-width: 640px){
-  .hero { padding: 20px 14px; margin: 16px auto; }
-  .hero h1 { font-size: 20px; }
-  .hero .sub { font-size: 13px; }
-  .cta .btn { width: 100%; justify-content: center; }
-  .cards, .testimonials, .grid { grid-template-columns: 1fr; gap: 12px; }
-  .card { padding: 16px; border-radius: 14px; }
-  .tile { border-radius: 14px; }
-  .tile .label { font-size: 11px; padding: 6px 8px; }
-  .lightbox-content { max-width: 96vw; max-height: 78vh; }
-  .lightbox-content img { max-width: 96vw; max-height: 78vh; }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 600ms cubic-bezier(.2,.8,.2,1),
-              transform 600ms cubic-bezier(.2,.8,.2,1);
-}
-.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
+@media (max-width: 640px) {
+  /* عنوان ها و متن ها */
+  .hero h1 {
+    font-size: 20px; /* کاهش اندازه عنوان */
+    line-height: 1.4;
+  }
+  .hero .sub {
+    font-size: 12px;
+  }
 
-/* احترام به کاربرانی که انیمیشن نمی‌خوان */
-@media (prefers-reduced-motion: reduce){
-  .reveal { transition: none; opacity: 1; transform: none; }
-  .glow { animation: none; }
+  /* دکمه‌ها */
+  .cta .btn {
+    font-size: 14px;
+    min-height: 48px;
+  }
+
+  /* کارت‌ها و بخش‌ها */
+  .card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* نمونه‌کارها و گرید */
+  .grid {
+    grid-template-columns: 1fr; /* تک ستونه کردن در موبایل */
+    gap: 12px;
+  }
+
+  /* تصاویر نمونه‌کارها */
+  .tile {
+    aspect-ratio: 4 / 3; /* یا می‌توانید حذف کنید و ارتفاع را کنترل کنید */
+    border-radius: 14px;
+  }
+  .tile img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* عناوین بخش‌ها */
+  .section h2 {
+    font-size: 18px;
+  }
+
+  /* دیگر موارد */
+  /* ... */
 }
   </style>
 </head>
@@ -495,7 +513,7 @@
     <div class="grid">
       <!-- جایگزین با تصاویر واقعی -->
       <div class="tile" data-cat="ceiling">
-        <img src="images/h.jpg" alt="..." width="600" height="400" loading="lazy" decoding="async"" alt="سقف دکوراتیو">
+        <img src="images/h.jpg" width="600" height="400" loading="lazy" decoding="async"" alt="سقف دکوراتیو">
         <div class="label">سقف دکوراتیو</div>
       </div>
       <div class="tile" data-cat="wall">
@@ -503,27 +521,27 @@
         <div class="label">دیوار کناف</div>
       </div>
       <div class="tile" data-cat="lighting">
-         <img src="images/f.jpg" alt="..." width="600" height="400" loading="lazy" decoding="async"alt="نورپردازی مخفی">
+         <img src="images/f.jpg" width="600" height="400" loading="lazy" decoding="async"alt="نورپردازی مخفی">
         <div class="label">نورپردازی مخفی</div>
       </div>
       <div class="tile" data-cat="ceiling">
-         <img src="images/e.webp" alt="..." width="600" height="400" loading="lazy" decoding="async" alt="سقف مدرن">
+         <img src="images/e.webp"  width="600" height="400" loading="lazy" decoding="async" alt="سقف مدرن">
         <div class="label">سقف مدرن</div>
       </div>
       <div class="tile" data-cat="wall">
-        <img src="images/d.jpg" alt="..." width="600" height="400" loading="lazy" decoding="async" alt="پارتیشن سبک">
+        <img src="images/d.jpg"  width="600" height="400" loading="lazy" decoding="async" alt="پارتیشن سبک">
         <div class="label">پارتیشن سبک</div>
       </div>
       <div class="tile" data-cat="lighting">
-        <img src="images/b.jpg" alt="..." width="600" height="400" loading="lazy" decoding="async" alt="نور خطی">
+        <img src="images/b.jpg" width="600" height="400" loading="lazy" decoding="async" alt="نور خطی">
         <div class="label">نور خطی</div>
       </div>
       <div class="tile" data-cat="ceiling">
-        <img src="images/c.webp" alt="..." width="600" height="400" loading="lazy" decoding="async" alt="سقف مدرن">
+        <img src="images/c.webp" width="600" height="400" loading="lazy" decoding="async" alt="سقف مدرن">
         <div class="label">سقف مدرن</div>
       </div>
       <div class="tile" data-cat="wall">
-        <img src="images/a.jpg" alt="..." width="600" height="400" loading="lazy" decoding="async" alt="دیوار مدرن">
+        <img src="images/a.jpg" width="600" height="400" loading="lazy" decoding="async" alt="دیوار مدرن">
         <div class="label">دیوار مدرن</div>
       </div>
     </div>
@@ -568,13 +586,6 @@
       <a class="btn" href="https://www.instagram.com/mlahmadil?igsh=OGlvdnphcml2eGc5" target="_blank" rel="noopener">پیج اینستاگرام</a>
     </div>
   </section>
-
-  <!-- Floating contact bar -->
-  <div class="float-bar">
-    <a class="btn brand" href="tel:+989195039558">تماس</a>
-    <a class="btn accent" href="https://wa.me/989195039558" target="_blank" rel="noopener">واتساپ</a>
-    <a class="btn" href="https://www.instagram.com/mlahmadil?igsh=OGlvdnphcml2eGc5" target="_blank" rel="noopener">اینستاگرام</a>
-  </div>
 
   <!-- Footer -->
   <footer>
@@ -623,6 +634,18 @@
     });
   }, { threshold: 0.1 });
   revealEls.forEach(el => io.observe(el));
+type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "کناف احمدی",
+  "telephone": "+989195039558",
+  "areaServed": "تهران",
+  "sameAs": [
+    "https://www.instagram.com/mlahmadil"
+  ]
+}
+
 </script>
 </body>
 </html>
